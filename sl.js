@@ -44,7 +44,7 @@ function getCredentials() {
 
       if (credential) {
         if (usedCredentials.includes(credential)) { // Check if the credential has been used
-          alert('Username and password has been used, kindly enter another to vote.');
+          alert('National Identification Number and Date of birth has been used, kindly enter another to vote.');
           continue;
         }
         usedCredentials.push(credential); // Add the used credential to the usedCredentials array
@@ -56,13 +56,14 @@ function getCredentials() {
       } else {
         alert('Invalid National Identification Number or Date of birth!');
        
-        // hide votingContainer if username and passcode are not valid
+        // hide votingContainer if credentials are not valid
         votingContainer.style.display = 'none';
       }
     } else {
       alert('Please enter both a National Identification Number and Date of birth!');
     }
   } while (!valid);
+  
 };
 
 // Function to cast a vote for a candidate
@@ -77,10 +78,10 @@ function castVote(candidate) {
         candidate3Votes++;
     } else if (candidate === 'candidate4') {
         candidate4Votes++;
-    }
+    } 
     updateResults();
     hasVoted = true; // set the flag variable to true after voting
-}
+    }
 };
 
 // Function to cast a void vote
